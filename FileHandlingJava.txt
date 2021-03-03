@@ -1,0 +1,126 @@
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+public class FirstProgram
+{
+	public static void main(String args[]) throws Exception
+	{
+		FileOutputStream fos = new FileOutputStream("s.txt");
+		
+		String s = "Welcome to SPPU Pune....";
+		byte b[] = s.getBytes();
+		
+		fos.write(b);
+		
+		FileInputStream fis = new FileInputStream("s.txt");
+		
+		int i =0;
+		 
+		while((i=fis.read())!= -1 )
+		{
+			System.out.print((char)i);
+		}
+		fis.close();
+		System.out.println("\n Success....");
+		
+	}
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+import java.io.*;
+public class WriterExample {
+
+	public static void main(String[] args) throws Exception
+	{
+		Writer w = new FileWriter("C:\\Users\\Yuvraj Darekar\\Desktop\\JavaProgrames\\s.txt");
+		String content  = "I love India......";
+		w.write(content);
+		w.close();
+		System.out.println("Done");
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+import java.io.*;
+public class ReaderExample {
+
+	public static void main(String[] args) throws Exception
+	{
+		Reader reader = new FileReader("C:/Users/Yuvraj Darekar/Desktop/JavaProgrames/s.txt");
+		int data;
+		while((data = reader.read()) != -1)
+		{
+			System.out.print((char) data);
+		}
+		reader.close();
+	}
+		// TODO Auto-generated method stub
+
+	}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+import java.io.File;
+import java.io.PrintWriter;
+
+public class PrintWriterDemo {
+
+	public static void main(String[] args) throws Exception {
+		
+		PrintWriter out = new PrintWriter(System.out);
+		out.print("Hello....................");
+		out.flush();
+		out.close();
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+import java.io.File;
+import java.io.PrintWriter;
+
+public class PrintWriterDemo {
+
+	public static void main(String[] args) throws Exception {
+		
+		File file = new File("C:/Users/Yuvraj Darekar/Desktop/JavaProgrames/s.txt");
+		PrintWriter writer1 = new PrintWriter(file);
+		writer1.write("........like java, spring,hibernate,android,php etc.");
+		writer1.flush();
+		writer1.close();
+		System.out.println("Success....");
+		// TODO Auto-generated method stub
+
+	}
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+public class PrintStreamTest {
+
+	public static void main(String[] args) throws Exception {
+		
+		FileOutputStream fout = new FileOutputStream ("C:/Users/Yuvraj Darekar/Desktop/JavaProgrames/s.txt");
+		
+		PrintStream pout = new PrintStream(fout);
+		pout.println(2021);
+		pout.close();
+		fout.close();
+		System.out.println("Success...");
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
